@@ -9,7 +9,7 @@
 (p/load!) ;; Load default configuration
 
 (defroutes app-routes
-  (GET "/" [] (response (p/parse :en$core ;; core configuration for English ; see also :fr$core, :es$core, :cn$core
+  (POST "/" [request] (response (p/parse :en$core ;; core configuration for English ; see also :fr$core, :es$core, :cn$core
          (get-in request [:body "period"])
          [:time])))
   (route/resources "/")
