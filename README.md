@@ -1,6 +1,8 @@
 # causemap-parse
 
-FIXME
+```
+curl -H "Content-Type: application/json" -d '{"period":"today"}' http://localhost:3000/
+```
 
 ## Prerequisites
 
