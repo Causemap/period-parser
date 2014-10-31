@@ -18,7 +18,7 @@
 
 (def app
   (-> (handler/site app-routes)
-      (wrap-cors app-routes :access-control-allow-origin #"http://www.causemap.org"
+      (wrap-cors :access-control-allow-origin #"http://www.causemap.org"
         :access-control-allow-methods [:post])
       (middleware/wrap-json-body {:keywords? true})
       (middleware/wrap-json-response)))
