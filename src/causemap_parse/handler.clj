@@ -18,7 +18,8 @@
 
 (def app
   (-> (handler/site app-routes)
-      (wrap-cors :access-control-allow-origin #"http://www.causemap.org"
-        :access-control-allow-methods [:post])
+      (wrap-cors :access-control-allow-origin #"^chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop|chrome-extension://fdmmgilgnpjigdojojpjoooidkmcomcm|http://localhost:3000|http://www\.causemap\.org$"
+                 :access-control-allow-methods [:post]
+                 :access-control-allow-headers ["Content-Type", "Cache-Control", "Postman-Token"])
       (middleware/wrap-json-body {:keywords? true})
       (middleware/wrap-json-response)))
