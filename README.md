@@ -1,4 +1,4 @@
-# causemap-parse
+# causemap-period-parser
 
 ```
 curl -H "Content-Type: application/json" -d '{"period":"today"}' http://localhost:3000/
