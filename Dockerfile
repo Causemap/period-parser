@@ -5,11 +5,10 @@ RUN wget -O /usr/bin/lein \
     https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein \
     && chmod +x /usr/bin/lein
 
-RUN lein
-
-VOLUME ["/project"]
-
+COPY . /project
 WORKDIR /project
 
-EXPOSE 3000
+RUN lein
+
+EXPOSE 1337
 CMD lein ring server-headless
